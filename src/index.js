@@ -326,6 +326,13 @@ export default class TronWeb extends EventEmitter {
                 } catch {
                     return false;
                 }
+            },
+            fromPublicKey(publicKey) {
+                try {
+                    return utils.crypto.pubkToAddress(publicKey);
+                } catch {
+                    return false;
+                }
             }
         }
     }

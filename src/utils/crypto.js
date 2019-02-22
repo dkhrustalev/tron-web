@@ -262,3 +262,10 @@ export function pkToAddress(privateKey) {
 
     return getBase58CheckAddress(com_addressBytes);
 }
+
+export function pubkToAddress(publicKey) {
+    const com_pubKeyBytes = hexStr2byteArray(publicKey);
+    const com_addressBytes = computeAddress(com_pubKeyBytes);
+
+    return getBase58CheckAddress(com_addressBytes);
+}
